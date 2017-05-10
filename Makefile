@@ -8,7 +8,8 @@ all:
 	# this first go build generates the mylib.h, but will fail to compile
 	# because we also need mylib_wrap.c from swig, which depends on mylib.h.
 	# hence we run 'go build' twice, and keep going after the first one fails.
-	go build -buildmode=c-shared mylib.go || true
+	go build -buildmode=c-shared first.go
+	mv first.h mylib.h
 	swig -outdir demos/python-swig/ -python mylib.i
 	gcc -fPIC -O2 -c -o mylib_wrap.o mylib_wrap.c -I$(PYTHON_INCLUDE)
 	ar cr libmylib_wrap.a mylib_wrap.o
