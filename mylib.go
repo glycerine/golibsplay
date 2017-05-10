@@ -1,6 +1,8 @@
 package main
 
 /*
+#cgo LDFLAGS: ${SRCDIR}/libmylib_wrap.a
+#cgo CFLAGS: -I${SRCDIR}
 typedef struct { long long x; long long y; } Coords;
 */
 import "C"
