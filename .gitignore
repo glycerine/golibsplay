@@ -1,5 +1,6 @@
 mylib.h
-mylib.i
+mylib_wrap.c
+libmylib_wrap.a
 mylib.so
 mylib.so.dylib
 demos/browser/myjslib.js*
