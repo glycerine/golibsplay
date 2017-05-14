@@ -12,6 +12,7 @@ import (
 
 //export PrintGoStr
 func PrintGoStr(s string) {
+	fmt.Printf("\n ...inside the PrintGoStr() with s='%v'.\n", s)
 	core.PrintStr(s)
 }
 
@@ -27,16 +28,19 @@ func PrintCStr(s *C.char) {
 
 //export PrintStruct
 func PrintStruct(c C.Coords) {
+	fmt.Printf("\n ...inside the PrintStruct() with c=%#v.\n", c)
 	fmt.Println(c)
 }
 
 //export PrintStructMeth
 func (c C.Coords) PrintStructMeth() {
+	fmt.Printf("\n ...inside the PrintStructMeth() with c=%#v.\n", c)
 	fmt.Println(c)
 }
 
 //export GetFirstJSONElement
 func GetFirstJSONElement(p *C.char) *C.char {
+	fmt.Printf("\n ...inside GetFirstJSONElement(p) with p=%#v.\n", C.GoString(p))
 	path, err := filepath.Abs(C.GoString(p))
 	if err != nil {
 		return C.CString(core.DumpError(err))

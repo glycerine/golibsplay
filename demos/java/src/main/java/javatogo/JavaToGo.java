@@ -32,6 +32,7 @@ public class JavaToGo {
     // These aren't working properly
     MY_LIB.PrintStruct("42");
     MY_LIB.PrintStructMeth("42");
+    System.out.println("Done with PrintStructMeth, on to PrintGoStr");
     MY_LIB.PrintGoStr("Hi to Go from Java");
   }
 }
